@@ -104,7 +104,9 @@ button {
 /* Main */
 #main-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15.6rem, 16rem));
+  grid-template-columns: repeat(auto-fit, minmax(15.6rem, 20rem));
+  padding: 2rem;
+  gap: 2rem;
 }
 .book {
   border: 2px solid var(--sub-color);
@@ -113,6 +115,10 @@ button {
 
   display: grid;
   gap: 2rem;
+  box-shadow: 0px 5px 5px 1px var(--sub-color);
+}
+.book:hover {
+  box-shadow: 0px 5px 20px 5px var(--sub-color);
 }
 .title {
   font-weight: 900;
