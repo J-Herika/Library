@@ -1,5 +1,8 @@
-const myLibrary = [];
+const dialog = document.querySelector("#add-book-dialog");
+const dialogCancelBtn = document.querySelector(".dialog-cancel-btn");
+const dialogOpenBtn = document.querySelector(".add-book-btn");
 
+const myLibrary = [];
 // i want to make a book constoctor with title author
 //and nubmer of pages and read status
 function Book(title, author, pages, readStatus) {
@@ -54,3 +57,5 @@ function displayBooks(books) {
 }
 
 displayBooks(myLibrary);
+dialogCancelBtn.addEventListener("click", () => dialog.close());
+dialogOpenBtn.addEventListener("click", () => dialog.showModal());
