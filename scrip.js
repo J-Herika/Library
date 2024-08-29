@@ -1,5 +1,6 @@
 const dialog = document.querySelector("#add-book-dialog");
 const dialogCancelBtn = document.querySelector(".dialog-cancel-btn");
+const dialogSubmitBtn = document.querySelector(".dialog-submit-btn");
 const dialogOpenBtn = document.querySelector(".add-book-btn");
 
 const myLibrary = [];
@@ -59,3 +60,9 @@ function displayBooks(books) {
 displayBooks(myLibrary);
 dialogCancelBtn.addEventListener("click", () => dialog.close());
 dialogOpenBtn.addEventListener("click", () => dialog.showModal());
+dialogSubmitBtn.addEventListener("click", (event) => getInput(event));
+
+function getInput(event) {
+  event.preventDefault();
+  console.log(2);
+}

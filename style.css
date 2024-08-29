@@ -178,6 +178,7 @@ label {
 }
 input[type="radio"] {
   transform: scale(1.5);
+  accent-color: var(--submain-color);
 }
 .dialog-inputs {
   display: flex;
