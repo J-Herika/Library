@@ -72,3 +72,7 @@ function getInput(event) {
   displayBooks(myLibrary);
   myLibrary.length = 0;
 }
+
+
+const deleteBtn = document.querySelector("delete-btn")
+.addEventListener("click", ()=> deleteBtn.closest(".book").remove())
