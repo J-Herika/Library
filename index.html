@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="scrip.js" defer></script>
     <title>Library</title>
   </head>
-  <body></body>
+  <body>
+    <h1 id="header">Book Library</h1>
+    <main id="main-section">
+      <div class="book">
+        <p class="title">Book Title</p>
+        <div class="book-details">
+          <p class="author">Author :</p>
+          <p class="pages">Pages :</p>
+          <div class="read-status">Read Status :</div>
+        </div>
+        <button class="delete-btn">Remove</button>
+      </div>
+    </main>
+    <footer id="footer">
+      <button class="add-book-btn">Add New Book</button>
+    </footer>
+  </body>
 </html>
