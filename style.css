@@ -153,7 +153,7 @@ button {
   width: 40vw;
   height: 40vh;
 }
-#add-book-dialog::backdrop{
+#add-book-dialog::backdrop {
   background-color: rgba(216, 172, 255, 0.495);
 }
 form {
@@ -201,12 +201,12 @@ input[type="radio"] {
   grid-auto-flow: column;
   gap: 20%;
 }
-.dialog-btns button{
+.dialog-btns button {
   border-radius: 0.5rem;
-  border: 2px solid  var(--sub-color);
-  padding: 0.5rem 0
+  border: 2px solid var(--sub-color);
+  padding: 0.5rem 0;
 }
-.dialog-btns button:hover{
+.dialog-btns button:hover {
   background-color: var(--sub-color);
   color: whitesmoke;
   border: 2px solid var(--submain-color);

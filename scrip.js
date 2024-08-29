@@ -4,26 +4,18 @@ const dialogSubmitBtn = document.querySelector(".dialog-submit-btn");
 const dialogOpenBtn = document.querySelector(".add-book-btn");
 
 const myLibrary = [];
-// i want to make a book constoctor with title author
-//and nubmer of pages and read status
+
+displayBooks(myLibrary);
+dialogCancelBtn.addEventListener("click", () => dialog.close());
+dialogOpenBtn.addEventListener("click", () => dialog.showModal());
+dialogSubmitBtn.addEventListener("click", (event) => getInput(event));
+
 function Book(title, author, pages, readStatus) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.readStatus = readStatus;
 }
-
-let book1 = new Book("Naruto", "Kishimoto", 1640, true);
-let book2 = new Book("sasuke", "Kishimoto hakoro", 1640, true);
-
-console.log(book1.info);
-// then with this constructor i want to add my own input to it and then
-// add it to the library
-
-myLibrary.push(book1);
-myLibrary.push(book2);
-
-// then i want to display all the books that are in the library
 
 function displayBooks(books) {
   books.forEach((book) => {
@@ -36,6 +28,8 @@ function displayBooks(books) {
     const read = document.createElement("p");
     const deleteBtn = document.createElement("button");
 
+    const values = Object.values(book);
+
     title.classList.toggle("title");
     bookDiv.classList.toggle("book");
     detailsDiv.classList.toggle("book-details");
@@ -44,25 +38,37 @@ function displayBooks(books) {
     read.classList.toggle("read-status");
     deleteBtn.classList.toggle("delete-btn");
 
-    let values = Object.values(book);
     title.textContent = values[0];
     author.textContent = `AUTHOR : ${values[1]}`;
     pages.textContent = `PAGES : ${values[2]}`;
     read.textContent = `Read Status : ${values[3] == true ? "Yes" : "No"}`;
     deleteBtn.textContent = "Remove";
 
+    deleteBtn.addEventListener("click", () =>
+      deleteBtn.closest(".book").remove()
+    );
     detailsDiv.append(author, pages, read);
     bookDiv.append(title, detailsDiv, deleteBtn);
     main.appendChild(bookDiv);
   });
 }
 
-displayBooks(myLibrary);
-dialogCancelBtn.addEventListener("click", () => dialog.close());
-dialogOpenBtn.addEventListener("click", () => dialog.showModal());
-dialogSubmitBtn.addEventListener("click", (event) => getInput(event));
-
 function getInput(event) {
   event.preventDefault();
-  console.log(2);
+  const titleEl = document.querySelector("#title");
+  const authorEl = document.querySelector("#author");
+  const pagesEl = document.querySelector("#pages");
+  const heaveReadEl = document.querySelector("#have-read");
+  console.log(titleEl.value);
+  const title = titleEl.value;
+  const author = authorEl.value;
+  const pages = pagesEl.value;
+  const heaveRead = heaveReadEl.checked == true ? true : false;
+
+  const book = new Book(title, author, pages, heaveRead);
+
+  dialog.close();
+  myLibrary.push(book);
+  displayBooks(myLibrary);
+  myLibrary.length = 0;
 }
